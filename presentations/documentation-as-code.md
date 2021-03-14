@@ -3,22 +3,12 @@ theme: "black"
 transition: "slide"
 hightlightTheme: "monokai"
 slideNumer: "false"
-title: "Why you should bother about Markdown and PlantUML."
+title: "Why you should give Markdown and PlantUML a try."
 ---
-# Documentation as code
 
-[Write The Docs](https://www.writethedocs.org/guide/docs-as-code/)
+# Markdown + PlantUML <br/>vs. <br/>Word, Visio,
 
-> Documentation as Code (Docs as Code) refers to a philosophy that you should be writing documentation with the same tools as code.
-
---
-
-## What tools do we use?
-
-- Code editor / IDE,  
-  e.g. IntelliJ, VS Code, vim, Notepad++
-- Version Control System, e.g. <i class="fa fa-git"></i>
-- Issue tracker, e.g. Jira
+Omnigraffle, Drawio, PowerPoint, ...
 
 ---
 
@@ -52,7 +42,24 @@ Why should you write something down in the first place?
 
 ---
 
-# Text files vs. nice looks
+# Documentation as code
+
+[Write The Docs](https://www.writethedocs.org/guide/docs-as-code/)
+
+> Documentation as Code (Docs as Code) refers to a philosophy that you should be writing documentation with the same tools as code.
+
+--
+
+# What tools do we use?
+
+- Code editor / IDE,  
+  e.g. IntelliJ, VS Code, vim, Notepad++
+- Version Control System, e.g. <i class="fa fa-git"></i>
+- Issue tracker, e.g. Jira
+
+--
+
+# Text files <br/>vs. <br/>nice looks
 
 - <i class="fa fa-git"></i> + IDE → text files
 - text files ≠ fancy layouting
