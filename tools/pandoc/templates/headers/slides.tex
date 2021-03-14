@@ -1,0 +1,35 @@
+% Copyright (c) Martin Palmowski / martin [dot] palmowski [at] gmail [dot] com
+%
+% This Source Code Form is subject to the terms of the Mozilla Public License,
+% v.2.0. If a copy of the MPL was not distributed with this file, You can obtain
+% one at http://mozilla.org/MPL/2.0/.
+%
+% This Source Code Form is “Incompatible With Secondary Licenses”, as defined by
+% the Mozilla Public License, v. 2.0.
+\usepackage{hyperref}
+\setbeamertemplate{footline}{}
+\useoutertheme{metropolis}
+\useinnertheme{metropolis}
+\usefonttheme{metropolis}
+\usecolortheme{metropolis}
+% \usecolortheme[snowy]{owl}
+
+\newcommand{\colA}[1]{\begin{columns}[t]\begin{column}{#1}} 
+\newcommand{\colB}[1]{\end{column}\begin{column}{#1}} 
+\newcommand{\colEnd}{\end{column}\end{columns}}
+
+% define custom colors for a "Girly presentation"
+\definecolor{junapink}{HTML}{ef4f91}
+\definecolor{junapurple}{HTML}{4d1b7b}
+\definecolor{junaviolet}{HTML}{c79dd7}
+\definecolor{junagreen}{HTML}{b1f96d}
+\definecolor{junamint}{HTML}{79eeff}
+\definecolor{junablue}{HTML}{007485}
+\definecolor{junadarkpurple}{HTML}{363b74}
+
+% use the colors
+\setbeamercolor{frametitle}{fg=junapink, bg=junapurple}
+\setbeamercolor{item}{fg=junapurple}
+\setbeamercolor{progress bar}{fg=junapurple, bg=junaviolet}
+\setbeamercolor{normal text}{fg=junadarkpurple}
+\setbeamercolor{title page}{fg=white, bg=junadarkpurple}
