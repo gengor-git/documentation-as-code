@@ -1,0 +1,40 @@
+@startuml demo-graph5
+
+!include <tupadr3/common>
+!include <tupadr3/font-awesome/github>
+!include <tupadr3/font-awesome/gitlab>
+!include <tupadr3/font-awesome/bitbucket>
+!include <tupadr3/font-awesome/amazon>
+!include <tupadr3/font-awesome/comments>
+!include <tupadr3/devicons/aws>
+!include <tupadr3/devicons/jira>
+!include <material/common>
+!include <material/account_settings>
+ 
+' Change styling via stereotypes, set by
+' macro from font-awesome/github library.
+skinparam cloud<<FA GITHUB>> {
+    BackgroundColor #66ffcc
+    ForegroundColor #ccff66
+}
+ 
+' Third argument is element type.
+FA_GITHUB(github, 'Github', cloud)
+' Fourth argument is foreground color.
+' After macro definition we can set the background color.
+FA_GITLAB(gitlab, 'Gitlab', cloud, #ff9e27) #ccff66
+FA_BITBUCKET(bitbucket, 'Bitbucket', cloud)
+FA_AMAZON(amazon, 'Amazon', cloud, orange) #fff
+DEV_AWS(aws, 'AWS', cloud)
+DEV_JIRA(jira, "Jira", cloud, blue) #fff
+
+
+ 
+github -> gitlab : # <$comments> ~#movingtogitlab
+gitlab -> bitbucket : # Then move again\n#go home\n#sleep well
+bitbucket --> jira : # Connect these <$ma_account_settings>
+bitbucket -> amazon : # move to own cloud <$comments>
+amazon --> aws: # Friendly cloud
+jira -> amazon: # Host yourself
+
+@enduml

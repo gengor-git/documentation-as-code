@@ -1,0 +1,35 @@
+@startuml demo-graph7
+
+title Deployment and Component Graphs
+
+skinparam NodeBackgroundColor #0076b2
+skinparam NodeBorderColor White
+skinparam NodeFontColor White
+skinparam FolderBackgroundColor #CCE4F0
+skinparam FolderBorderColor Grey
+skinparam DatabaseBackgroundColor #CCE4F0
+skinparam DatabaseBorderColor Grey
+skinparam ComponentBackgroundColor #CCE4F0
+skinparam ComponentBorderColor Grey
+skinparam NoteBackgroundColor #EAEAEA
+skinparam NoteBorderColor Grey
+skinparam ArrowColor DarkSlateGrey
+
+package Arvato {
+node node1
+node node2
+node node3
+folder folder1
+database db1
+}
+cloud "customer" {
+    [Component] ..> [Other] : Use
+}
+node1 -> node2: Test
+node2 --> node3: Test 2
+note right of node2: Hello
+node3 -[dotted]> folder1: Test
+node3 --> db1
+db1 -> Component
+
+@enduml

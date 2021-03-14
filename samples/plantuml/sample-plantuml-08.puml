@@ -1,0 +1,43 @@
+@startuml demo-graph8
+
+skinparam NodeBackgroundColor #0076b2
+skinparam NodeBorderColor White
+skinparam NodeFontColor White
+skinparam FolderBackgroundColor #CCE4F0
+skinparam FolderBorderColor Grey
+skinparam DatabaseBackgroundColor #CCE4F0
+skinparam DatabaseBorderColor Grey
+skinparam ComponentBackgroundColor #CCE4F0
+skinparam ComponentBorderColor Grey
+skinparam NoteBackgroundColor #EAEAEA
+skinparam NoteBorderColor Grey
+skinparam ArrowColor DarkSlateGrey
+
+!include <tupadr3/devicons/java>
+
+title Mein Systemkontext
+
+node Webserver
+node ApplicationServer1 as app1
+node ApplicationServer2 {
+    [Komponente 1]
+    component "Komponente 2" as comp2
+}
+database Datenbank <<Maria DB>> [
+    PROD
+    ===
+    Schema 1
+    Schema 2
+    ---
+    User Schema
+]
+
+Webserver -[dashed,#blue]-> app1: Proxy\nZeile 2
+Webserver --> Datenbank
+note right of Webserver: Hallo ihr! <$java>
+Webserver --> ApplicationServer2
+[Komponente 3] . comp2: Proxy
+comp2 --> Datenbank
+
+
+@enduml

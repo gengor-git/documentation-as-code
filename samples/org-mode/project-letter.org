@@ -1,0 +1,155 @@
+#+TITLE: Project Letter
+#+SUBTITLE: Project
+#+SOLUTION: Solution Name
+#+AUTHOR: Martin Palmowski
+#+LANGUAGE: en
+#+TITLEPAGE: true
+#+TITLEPAGE-TEXT-COLOR: 363B74
+#+TITLEPAGE-RULE-COLOR: EF4F91
+#+DISCLAIMER-COLOR: EF4F91
+#+DISCLAIMER-TEXT-COLOR: FFFFFF
+#+TOC: true
+#+LOT: true
+#+SETUPFILE: theme-readtheorg.setup
+#+TODO: REQMT(r) ESTIM(e) SCHED(p) START(s) | COMPL(t) CANCL(c)
+
+#+LaTeX_HEADER: \usepackage[left=1in,top=1in,right=1in,bottom=1.5in]{geometry}
+#+LaTeX_HEADER: \usepackage[sfdefault]{FiraSans} %% option 'sfdefault' activates Fira Sans as the default text font
+#+LaTeX_HEADER: \usepackage[T1]{fontenc}
+#+LaTeX_HEADER: \renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+#+LATEX_HEADER: \usepackage[AUTO]{babel}
+#+LaTeX_HEADER: \usepackage{fancyhdr}
+#+LaTeX_HEADER: \usepackage{sectsty}
+#+LaTeX_HEADER: \usepackage{engord}
+#+LaTeX_HEADER: \usepackage{graphicx}
+#+LaTeX_HEADER: \usepackage{setspace}
+#+LaTeX_HEADER: \usepackage[compact]{titlesec}
+#+LaTeX_HEADER: \usepackage[center]{caption}
+#+LaTeX_HEADER: \usepackage{multirow}
+#+LaTeX_HEADER: \usepackage{ifthen}
+#+LaTeX_HEADER: \usepackage{longtable}
+#+LaTeX_HEADER: \usepackage{color}
+#+LaTeX_HEADER: \usepackage{listings}
+#+LaTeX_HEADER: \usepackage{pdfpages}
+#+LaTeX_HEADER: \usepackage{pdflscape}	% For landscape pictures and environment
+#+LaTeX_HEADER: \usepackage{verbatim} 	% For multiline comment environments
+#+LaTeX_HEADER: \usepackage[table]{xcolor}
+
+* Projectname
+** Abstract
+** Scope / Goals
+   1. Features
+      * Feature A
+      * Feature B
+      * Feature C
+      * Feature D
+   2. Quality
+      - Pass All QA-Gateways
+   3. Budget
+      - Internal
+      - "At Cost"
+** System Context
+#+BEGIN_SRC plantuml :file project-letter-context.png :exports results
+@startuml
+actor Customer
+database Shop
+actor Operator
+
+Customer -> Shop: Purchase
+Shop -> Operator: Notification
+@enduml
+#+END_SRC
+
+#+attr_latex: :width 200px
+#+RESULTS:
+[[file:project-letter-context.png]]
+
+#+BEGIN_SRC dot :file project-letter-transport.png :exports results
+digraph {
+  Shop -> SAP;
+  SAP -> Compliance;
+  SAP -> Shop;
+  SAP -> Customer;
+}
+#+END_SRC
+
+#+attr_latex: :width 200px
+#+RESULTS:
+[[file:project-letter-transport.png]]
+
+#+BEGIN_SRC plantuml :file project-gantt.png :exports results
+@startgantt
+project starts the 2018/04/24
+saturday are closed
+sunday are closed
+[Requirements] lasts 10 days
+@endgantt
+#+END_SRC
+
+#+RESULTS:
+[[file:project-gantt.png]]
+
+** Working Packages
+  :PROPERTIES:
+  :FOR_EXPORT_COLUMNS:  %50ITEM %5Estimate(Estimate){:}
+  :QGate_ALL: "[ ]" "[X]"
+  :COLUMNS:  %70ITEM %5Estimate(Estimate){:} %5Used(Used){:} %8TODO(State) %10Deadline(Deadline) %10QGate(QA){X}
+  :ID:       project-1
+  :EXPORT_TITLE: Awesome Social Networking Mash-up Project
+  :EXPORT_OPTIONS: toc:nil
+  :END:
+*** START Package 1
+    DEADLINE: <2018-04-20 Fr>
+    :PROPERTIES:
+    :Estimate: 48:00
+    :Used:     12:00
+    :QGate:    [ ]
+    :END:
+    :LOGBOOK:
+    - State "STARTED"    from "TODO"       [2018-04-15 So 11:17]
+    :END:
+*** SCHED Package 2
+    DEADLINE: <2018-04-30 Mo>
+    :PROPERTIES:
+    :Estimate: 16:00
+    :QGate:    [ ]
+    :END:
+*** COMPL Package 3
+    CLOSED: [2018-04-22 So 21:00] DEADLINE: <2018-05-15 Di>
+    :PROPERTIES:
+    :Estimate: 8:00
+    :Used:     8:00
+    :QGate:    [X]
+    :END:
+    :LOGBOOK:
+    - State "DONE"       from "TODO"       [2018-04-15 So 11:18]
+    :END:
+*** SCHED Testing
+    :PROPERTIES:
+    :Estimate: 50:00
+    :QGate:    [ ]
+    :END:
+*** SCHED Release / Go-Live
+    :PROPERTIES:
+    :ESTIMATE: 20:00
+    :QGate:    [ ]
+    :END:
+*** SCHED Hypercare
+    :PROPERTIES:
+    :Estimate: 20:00
+    :QGate:    [ ]
+    :END:
+** Timeline
+#+BEGIN: columnview :hlines 2 :vlines t :id "project-1" :skip-empty-rows t :indent t
+#+CAPTION: Working Package and Status
+|   | ITEM                    | Estimate |  Used | State | Deadline        | QA  |
+|---+-------------------------+----------+-------+-------+-----------------+-----|
+|   | \_  Working Packages    |   162:00 | 20:00 |       |                 | [-] |
+|   | \_    Package 1         |    48:00 | 12:00 | START | <2018-04-20 Fr> | [ ] |
+|   | \_    Package 2         |    16:00 |       | SCHED | <2018-04-30 Mo> | [ ] |
+|   | \_    Package 3         |     8:00 |  8:00 | COMPL | <2018-05-15 Di> | [X] |
+|   | \_    Testing           |    50:00 |       | SCHED |                 | [ ] |
+|   | \_    Release / Go-Live |    20:00 |       | SCHED |                 | [ ] |
+|   | \_    Hypercare         |    20:00 |       | SCHED |                 | [ ] |
+| / | <>                      |       <> |    <> | <>    | <>              | <>  |
+#+END:

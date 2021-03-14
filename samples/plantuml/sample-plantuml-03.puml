@@ -1,0 +1,33 @@
+@startuml demo-graph3
+
+skinparam ActivityBackgroundColor WhiteSmoke
+skinparam ActivityBorderColor MidnightBlue
+skinparam NoteBackgroundColor PeachPuff
+skinparam NoteBorderColor Peru
+skinparam ActivityDiamondBackgroundColor DarkSlateBlue
+skinparam ActivityDiamondFontColor White
+skinparam ActivityDiamondBorderColor Grey
+skinparam ArrowColor DarkSlateBlue
+
+|Kunde|
+start
+:Anforderungen\nschicken;
+|KAM|
+:Anfrage\nbestätigen;
+:Solution Design\nanfordern;
+note right: Ggf. Solution Board
+:Anforderungen\nprüfen;
+|SD-Team|
+:Grobkonzept\nerstellen;
+note right: Maturity Level 2-3
+:Kalkulationsdaten\nliefern;
+:Leistungsbe-\nschreibung\nliefern;
+|KAM|
+:Kalkulation\nerstellen;
+:Angebot\nerstellen;
+if (Angebot > 300TEUR) then (yes)
+    :Freigabe einholen;
+endif
+:Angebot an Kunde\nschicken;
+stop
+@enduml

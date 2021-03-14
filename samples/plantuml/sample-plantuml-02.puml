@@ -1,0 +1,27 @@
+@startuml demo-graph2
+
+title Writing Markdown
+
+skinparam ActivityBackgroundColor #8ae6ae
+skinparam ActivityBorderColor #74a82a
+skinparam ArrowColor #3565a1
+skinparam DefaultFontName Fira Code
+
+start
+
+:Read about the format;
+:Install the editor;
+:Try some examples;
+:Start writing;
+:Check the published output;
+:Use it daily;
+
+if (Do you like it) then (yes)
+    :Perfect;
+else (no)
+    :Me sad.;
+endif
+
+stop
+
+@enduml

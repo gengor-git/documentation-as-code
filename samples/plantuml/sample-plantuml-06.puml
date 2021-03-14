@@ -1,0 +1,60 @@
+@startuml demo-graph6
+
+!include <tupadr3/common>
+!include <tupadr3/devicons/git>
+!include <tupadr3/devicons/visualstudio>
+!include <tupadr3/devicons/aws>
+!include <tupadr3/devicons/java>
+!include <tupadr3/devicons/javascript>
+!include <tupadr3/devicons/terminal>
+!include <tupadr3/devicons/code>
+!include <tupadr3/devicons/jenkins>
+!include <tupadr3/devicons/vim>
+!include <tupadr3/devicons/windows>
+!include <tupadr3/font-awesome/amazon>
+!include <tupadr3/font-awesome/hashtag>
+!include <tupadr3/font-awesome/circle_o_notch>
+!include <tupadr3/font-awesome/floppy_o>
+!include <tupadr3/font-awesome/cog>
+!include <tupadr3/font-awesome/empire>
+!include <tupadr3/font-awesome/rebel>
+!include <tupadr3/font-awesome/hand_peace_o>
+!include <material/common>
+!include <material/cellphone>
+!include <material/clipboard_text>
+
+skinparam Activity {
+    BackgroundColor LawnGreen
+    FontColor MidnightBlue
+    BorderColor Gold
+    DiamondBackgroundColor SandyBrown
+}
+
+skinparam ArrowColor DarkOrange
+skinparam DefaultTextAlignment Center
+skinparam DefaultFontName Fira Code
+
+start
+
+:Install editor
+<$visualstudio> <$windows>;
+:Connect to <b>git</b> repo
+<$git>;
+:Code
+<$vim> <$code> <$java> <$javascript>;
+:Deploy to AWS
+<$terminal> <$jenkins> <$aws> <$amazon>;
+:Other stuff
+<$hashtag> <$ma_cellphone> <$ma_clipboard_text> <$circle_o_notch> <$cog> <$floppy_o>;
+if (check morality) then (evil)
+    :Join the empire
+    <$empire>;
+else (good)
+    :Join the rebels
+    <$rebel>;
+endif
+:Wait for peace
+<$hand_peace_o>;
+
+stop
+@enduml

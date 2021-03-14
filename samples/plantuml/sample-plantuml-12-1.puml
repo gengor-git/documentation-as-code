@@ -1,0 +1,26 @@
+@startuml C4 Level 1 System Context diagram
+
+'!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+'!include <C4/C4_Container.puml>
+!include <C4/C4_Context.puml>
+'!define SPRITESURL https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.0/sprites
+'!includeurl SPRITESURL/spring.puml
+!include <logos/spring.puml>
+
+!include <tupadr3/devicons2/angularjs>
+!include <tupadr3/devicons2/java>
+
+'LAYOUT_WITH_LEGEND()
+LAYOUT_LEFT_RIGHT()
+
+Person(account_mgr, "Account Manager", "Responsible for the service and its setup.")
+
+System(my_solution, "My Solution", "Software-System", "java")
+
+System_Ext(erp, "ERP")
+
+Rel(account_mgr, my_solution, "Uses")
+Rel(my_solution, erp, "Fetch data")
+
+
+@enduml

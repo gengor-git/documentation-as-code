@@ -1,0 +1,30 @@
+@startuml demo-graph7
+
+title This is my everyday work sample
+
+skinparam ActivityBackgroundColor #fee2FF
+skinparam ActivityBorderColor SlateGrey
+skinparam ArrowColor #4a7144
+
+start
+
+#d179f2:Sales-Lead idenfizieren;
+:Sales-Prozess starten;
+:Kundenbedarf wecken;
+repeat
+    :Konzept erstellen (Level 2);
+repeat while (Konzept freigegeben?)
+:Angebot erstellen;
+while (Beauftragung da?)
+    -[#a23131]-> Nein;
+    :Warten auf Fachbereich|
+    -[#d8cb2c]-> 15 Tage Pause;
+endwhile
+-[dotted]-> PO ist gekommen;
+#Orange:Projektinitialisierung starten>
+
+stop
+
+
+
+@enduml

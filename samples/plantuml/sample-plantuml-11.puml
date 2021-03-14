@@ -1,0 +1,24 @@
+@startuml demo-graph11
+
+skinparam ActorBackgroundColor #c5e17a
+skinparam ActorBorderColor #2d383a
+skinparam ArrowColor #a50b5e
+
+title Visualisierung hilft
+
+actor Endkunde as customer
+actor CSD as csd
+actor "IT-Operator" as itops
+
+customer -> csd: Hilfe.
+csd -> customer: Was ist los?
+customer -> csd: Mein Passwort geht nicht.
+csd -> itops : Bitte Passwort-Reset für customer.
+itops -> csd : Erledigt.
+csd -> itops: Danke.
+csd -> customer: Passwort wurde zurückgesetzt.
+customer -> csd: Super, hat geklappt.
+csd -> customer: Ticket geschlossen.
+
+
+@enduml

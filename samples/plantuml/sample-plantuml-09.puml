@@ -1,0 +1,101 @@
+@startuml demo-graph9
+
+skinparam NodeBackgroundColor White
+skinparam NodeBorderColor SlateGrey
+skinparam FolderBackgroundColor #EAEAEA
+skinparam FolderBorderColor Grey
+skinparam DatabaseBackgroundColor #EAEAEA
+skinparam DatabaseBorderColor Grey
+skinparam ComponentBackgroundColor #EAEAEA
+skinparam ComponentBorderColor Grey
+skinparam NoteBackgroundColor #EAEAEA
+skinparam FileBackgroundColor #EAEAEA
+skinparam StorageBackgroundColor #EAEAEA
+skinparam NoteBorderColor Grey
+skinparam ArrowColor DarkSlateGrey
+skinparam ActorBorderColor #5B756C
+
+title Drupal Server System Context
+
+actor #91C32C "Anwender" as user1
+actor #D9EBF4 "Editor" as editor1
+actor #E90F40 "Tester" as tester1
+actor #FFC105 "Developer" as dev1
+actor #FFC105 "IT-Operator" as ops1
+
+package "RZ Oz" as oz {
+    node "Virtual Machine 1" as vm1 {
+        cloud "Docker" as dockerprod {
+            file #B8E68A "Apache 2.4" <<PROD>> as apacheprod
+            file #B8E68A "Drupal 5" <<PROD>> as drupalprod
+        }
+        storage #B8E68A "Media" <<PROD>> as mediastorageprod
+        database #B8E68A "Maria DB 10" <<PROD>> as dbprod
+
+    }
+    node "Virtual Machine 2" as vm2 {
+        cloud "Docker" as dockerintg {
+            file "Apache 2.4" <<STAGE>> as apacheintg
+            file #F05D25 "Drupal 5" <<INTG>> as drupalintg
+            file #FFC105 "Drupal 5" <<TEST>> as drupaltest
+            file #0076B2 "Drupal 5" <<PRELIVE>> as drupalprelive
+            file #FFEB00 "Drupal 5" <<Campaign1>> as drupalca1
+            file #FF7034 "Drupal 5" <<Campaign1>> as drupalca2
+            file #FF7034 "Drupal 5" <<Campaign2>> as drupalca3
+        }
+        database "Maria DB 10" <<STAGE>> as dbintg
+    }
+    node "Virtual Machine 3" as vm3 {
+        cloud "Docker" as dockerlab {
+            file "Apache 2.4" <<LAB>> as apachelab
+            file #F05D25 "Drupal 5" <<LAB1>> as drupallab1
+            file #FFC105 "Drupal 5" <<LAB2>> as drupallab2
+        }
+        database "Maria DB 10" <<STAGE>> as dblab
+    }
+}
+
+node DOMAIN <<Active Directory>> as AD
+
+user1 ..> apacheprod : Intranet, https
+editor1 ..> apacheprod : Intranet, https
+tester1 ..> apacheintg : Intranet, https
+tester1 ..> apachelab
+
+dev1 .up.> oz : OpenVPN
+ops1 .up.> oz : OpenVPN
+
+apacheprod -> drupalprod
+drupalprod --> dbprod
+drupalprod --> mediastorageprod
+drupalprod .up.> AD : One-sited Trust
+user1 .left. AD
+
+apacheintg --> drupalintg
+apacheintg --> drupaltest
+apacheintg --> drupalprelive
+drupalintg --> dbintg
+drupaltest --> dbintg
+drupalprelive --> dbintg
+
+apachelab --> drupallab1
+apachelab --> drupallab2
+
+newpage
+
+skinparam NodeBackgroundColor #FFE4E1
+skinparam FileBackgroundColor #0DA921
+skinparam StorageBackgroundColor #EE82EE
+
+title Drupal Local Setup
+
+package Local as local {
+    node "Virtual Box" as vbox {
+        file "CentOS 7" as linux
+        storage "Virtual Disk" as image
+    }
+}
+
+linux .[#32CD32]down. image
+
+@enduml

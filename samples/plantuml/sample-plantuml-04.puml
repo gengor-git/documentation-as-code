@@ -1,0 +1,29 @@
+@startuml demo-graph4
+
+skinparam ActivityBackgroundColor Violet
+skinparam DefaultFontName Source Sans Pro
+skinparam DefaultFontSize 24 
+skinparam ArrowColor Black
+|du|
+start
+
+:Einladungen verschicken;
+note left: Teilnehmer von Bereichs-\nleitern <b>besorgen</b>.
+:Vortrag vorbereiten;
+:Probelauf durchführen;
+
+repeat
+    :Termin festlegen;
+    -[#red,dotted]-> Via Outlook;
+    |ich|
+    :Teilnehmer schulen;
+    -[#green,dashed]-> 1,5 Std.;
+    |du|
+    :Feedback einsammeln;
+    -[#MidnightBlue,dashed]-> im Anschluss;
+    note left: Vortrag ggf. verbessern.
+repeat while (Jemand noch\nungeschult?)
+
+stop
+
+@enduml

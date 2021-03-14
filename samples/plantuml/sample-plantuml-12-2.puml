@@ -1,0 +1,31 @@
+@startuml C4 Level 2 System Container Diagram
+
+'!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include <C4/C4_Container>
+'!define SPRITESURL https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.0/sprites
+'!includeurl SPRITESURL/spring.puml
+!include <logos/spring.puml>
+
+!include <tupadr3/devicons2/angularjs>
+!include <tupadr3/devicons2/java>
+!include <tupadr3/devicons2/postgresql>
+
+LAYOUT_WITH_LEGEND()
+LAYOUT_LEFT_RIGHT()
+
+Person(account_mgr, "Account Manager", "Responsible for the service and its setup.")
+
+System_Boundary(my_solution, "My Solution"){
+    Container(webapp, "Single-page Web Application", "AngularJS", "UI to the customer.", "angularjs")
+    Container(api, "API Backend", "Java / Spring MVC", "Does the magic. Stays in the back.", "spring")
+    ContainerDb(db, "Relational Database", "PostgreSQL", "Stores the calculated data.","postgresql")
+}
+
+System_Ext(erp, "ERP")
+
+Rel(account_mgr, webapp, "Surfs on", "https")
+Rel(webapp, api, "Calls","https")
+Rel(api, db, "Read and store data", "jdbc")
+Rel(api, erp, "Fetch data", "https")
+
+@enduml
