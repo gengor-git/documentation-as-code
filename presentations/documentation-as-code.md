@@ -1,31 +1,34 @@
 ---
-title: "Why you should give Markdown and PlantUML a try."
+title: "Markdown + PlantUML vs. Word, Visio and Friends"
 logoImg: "logo.png"
 theme: "black"
 transition: "slide"
 slideNumber: "true"
+controlsTutorial: "true"
 ---
 
-# Markdown + PlantUML <br/>vs. <br/>Word, Visio,
+<!-- .slide: data-background-image="title-image.png" data-background-opacity="0.1" -->
+
+## Markdown + PlantUML <br/>vs. <br/>Word, Visio,
 
 Omnigraffle, Drawio, PowerPoint, ...
 
----
+--
 
-# The idea behind documentations
+## The idea behind documentations
 
 Why should you write something down in the first place?
 
 --
 
-## Bad reasons for documenting
+### Bad reasons for documenting
 
 - It's required by a higher force.
 - It's the only way to know what the thing does.
 
 --
 
-## Things you could do instead of documenting
+### Things you could do instead of documenting
 
 - Write clean(er) code
 - Automate more
@@ -42,7 +45,7 @@ So I'd like them to be thankful for what I told them.{class="fragment"}
 
 ---
 
-# Documentation as code
+## Documentation as code
 
 [Write The Docs](https://www.writethedocs.org/guide/docs-as-code/)
 
@@ -50,7 +53,7 @@ So I'd like them to be thankful for what I told them.{class="fragment"}
 
 --
 
-# What tools do we use?
+### What tools do we use?
 
 - Code editor / IDE,  
   e.g. IntelliJ, VS Code, vim, Notepad++
@@ -59,10 +62,12 @@ So I'd like them to be thankful for what I told them.{class="fragment"}
 
 --
 
-# Text files <br/>vs. <br/>nice looks
+## Text files <br/>vs. <br/>nice looks
 
 - <i class="fa fa-git"></i> + IDE → text files
 - text files ≠ fancy layouting
+
+> How do we solve this dilema?{class="fragment"}
 
 --
 
@@ -77,7 +82,7 @@ So I'd like them to be thankful for what I told them.{class="fragment"}
 
 ---
 
-### Markdown Basics
+## Markdown Basics
 
 ```{.markdown data-line-numbers="1-2|3-5|6-9|10-15|16-17|18-19|22-25|20-21"}
 # Heading
@@ -144,14 +149,14 @@ var txt = "Hello World";
 
 --
 
-## Publish to target formats
+### Publish to target formats
 
 Recommendation:  
 [Pandoc](https://pandoc.org/) can be your swiss army knife of conversion.
 
 --
 
-# Conclusion
+### Invest in Markdown
 
 - With less than 10 simple convetions you can write full documents
 - Renderers will create nice looking target formats like HTML5 or PDF
@@ -159,7 +164,7 @@ Recommendation:
 
 ---
 
-## PlantUML & Mermaid.js
+## PlantUML
 
 - You write structured (sematic) text files
 - You get auto-layouted, graphical representations als PNG, SVG, EPS, PDF, ...
@@ -169,7 +174,7 @@ Recommendation:
 
 <!-- .slide: data-background="#f1e4cd" -->
 
-PlantUML
+### PlantUML usecase
 
 ```
 @startuml
@@ -213,13 +218,13 @@ Rel(my_solution, erp, "Fetch data")
 
 <!-- .slide: data-background="#d6d4f9" -->
 
-C4-Architecture with PlantUML » Level 1
+### C4-Architecture with PlantUML Level 1
 
 ![](plantuml-c4-level1.svg)
 
 --
 
-<!-- .slide: data-background="#98dacb" -->
+<!-- .slide: data-background="#3c859f" -->
 
 ### C4-Architecture with PlantUML Level 2
 
@@ -248,12 +253,20 @@ Rel(api, erp, "Fetch data", "https")
 
 --
 
-<!-- .slide: data-background="#98dacb" -->
+<!-- .slide: data-background="#3c859f" -->
 
-C4-Architecture with PlantUML » Level 2
+### C4-Architecture with PlantUML Level 2
 
 ![](plantuml-c4-level2.svg)
 
 ---
 
+<!-- .slide: data-background="#295f46" -->
 
+## Putting it all together
+
+- Markdown for text/lists/tables
+- PlantUML for diagrams
+- Other media for PNG/SVG/EPS content
+- Publish to different formats for different purposes
+- Version control and content re-use
