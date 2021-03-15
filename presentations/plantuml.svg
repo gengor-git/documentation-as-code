@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="191px" preserveAspectRatio="none" style="width:153px;height:191px;" version="1.1" viewBox="0 0 153 191" width="153px" zoomAndPan="magnify"><defs><filter height="300%" id="fofuzbbbqb0tx" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[bc94ac5b2c43560bd922e5fc087247df]
+entity Fred--><ellipse cx="40" cy="14" fill="#FEFECE" filter="url(#fofuzbbbqb0tx)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M40,22 L40,49 M27,30 L53,30 M40,49 L27,64 M40,49 L53,64 " fill="none" filter="url(#fofuzbbbqb0tx)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="25" y="84.0332">Fred</text><!--MD5=[b7c4891965cdb972ef9d9185eeaa1972]
+entity Wilma--><ellipse cx="109" cy="14" fill="#FEFECE" filter="url(#fofuzbbbqb0tx)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M109,22 L109,49 M96,30 L122,30 M109,49 L96,64 M109,49 L122,64 " fill="none" filter="url(#fofuzbbbqb0tx)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="90" y="84.0332">Wilma</text><ellipse cx="73.7517" cy="163.4503" fill="#FEFECE" filter="url(#fofuzbbbqb0tx)" rx="67.7517" ry="15.9503" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="30.2517" y="167.9669">Watch Movie</text><!--MD5=[4d6ce326436fa2742cc1931cf4b9d545]
+link Fred to movie--><path d="M51.9871,87.721 C58.0669,108.3743 65.0861,132.2189 69.5324,147.3234 " fill="none" id="Fred-movie" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2bc770baca7bedc69cc90484f3a503d0]
+link Wilma to movie--><path d="M96.6603,87.721 C90.4017,108.3743 83.1761,132.2189 78.599,147.3234 " fill="none" id="Wilma-movie" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8263a76931a8a23f9c0b53422696e39c]
+@startuml
+actor Fred
+actor Wilma
+
+usecase "Watch Movie" as movie
+
+Fred - - movie
+Wilma - - movie
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 11:25:05 CET 2021)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: de
+Country: DE
+--></g></svg>
