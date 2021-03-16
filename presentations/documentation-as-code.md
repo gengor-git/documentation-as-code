@@ -19,11 +19,11 @@ Omnigraffle, Drawio, PowerPoint, ...
 
 ---
 
-## On my motivation to document
+## About my personal motivation to document
 
 --
 
-## Bad reasons for documenting
+## Anti-patterns first: <br/>bad reasons for documenting
 
 - It's required by a higher force.
 - It's the only way to know what the thing does.
@@ -71,7 +71,7 @@ Independent from platforms and tools.
 ### What's the toolchain again?
 
 - Code editor / IDE,  
-  e.g. IntelliJ, VS Code, vim, Notepad++
+  e.g. IntelliJ, [VS Code](https://code.visualstudio.com/), vim, Notepad++
 - Version Control System, e.g. <i class="fa fa-git"></i>
 - Issue trackers, e.g. Jira
 
@@ -166,14 +166,15 @@ var txt = "Hello World";
 
 ### Publish to target formats
 
-Recommendation:  
+**Recommendation:**  
 [Pandoc](https://pandoc.org/) can be your swiss army knife of conversion.
 
 **Examples**:
-- Markdown → PDF, Word, Jira
-- but also Word → Markdown{class="fragment fade-left"}
-- also Org-Mode to Markdown{class="fragment fade-left"}
-- even Markdown to ePub{class="fragment fade-left"}
+
+- Markdown → HTML5, PDF, Word, PowerPoint
+- You may also like Markdown → Jira (and back again){class="fragment fade-left"}
+- How about Markdown to ePub or man pages?{class="fragment fade-left"}
+- Even MS Word → Markdown is possible{class="fragment fade-left"}
 
 --
 
@@ -216,16 +217,15 @@ Wilma - move
 <span class="fragment">this ↑ code</span>
 <span class="fragment fade-up"> creates this ↓ diagram </span>
 
-![](plantuml.svg){width=20% class="fragment fade-up" style="background:white;border-radius: 25px;"}
+![](plantuml.svg){width="16%" class="fragment fade-up" style="background:white;border-radius: 5px;"}
 
 --
 
 ### C4-Architecture at Level 1 » Context
 
-```{data-line-numbers="1,11|2-4|5|6|7-8|9-10"}
+```{data-line-numbers="1,11|2-3|4|5|6-7|8-9"}
 @startuml C4 Level 1 System Context diagram
 !include <C4/C4_Context.puml>
-!include <logos/spring.puml>
 !include <tupadr3/devicons2/java>
 LAYOUT_LEFT_RIGHT()
 Person(account_mgr, "Account Manager", "Responsible for the service and its setup.")
@@ -238,8 +238,6 @@ Rel(my_solution, erp, "Fetch data")
 
 --
 
-<!-- .s lide: data-background="#d6d4f9" data-auto-animate -->
-
 ### C4-Architecture at Level 1 » Context
 
 ![](plantuml-c4-level1.svg){style="background: rgb(82%, 80%, 74.1%); border-radius: 5px; padding: 0.2em;"}
@@ -248,12 +246,11 @@ Rel(my_solution, erp, "Fetch data")
 
 ### C4-Architecture at Level 2 » Container
 
-```{data-line-numbers="1,20|2-6|7-8|9|10-14|15|16-19"}
+```{data-line-numbers="1,20|2-5|6-7|8|9-13|14|15-18"}
 @startuml C4 Level 2 System Container Diagram
 !include <C4/C4_Container>
 !include <logos/spring.puml>
 !include <tupadr3/devicons2/angularjs>
-!include <tupadr3/devicons2/java>
 !include <tupadr3/devicons2/postgresql>
 LAYOUT_WITH_LEGEND()
 LAYOUT_LEFT_RIGHT()
@@ -291,30 +288,54 @@ Rel(api, erp, "Fetch data", "https")
 
 ### The tool stack
 
-- VS Code for editing{class="fragment fade-left"}
+- [VS Code](https://code.visualstudio.com/) for editing{class="fragment fade-left"}
 - [Pandoc](https://pandoc.org/MANUAL.html) for conversions{class="fragment fade-left"}
   - Filters + templates for optimal output{class="fragment fade-left"}
-- MiKTeX (Windows) for PDF creation{class="fragment fade-left"}
-- PlantUML + Graphviz for diagrams{class="fragment fade-left"}
+- [MiKTeX](https://miktex.org/) (Windows) for PDF creation{class="fragment fade-left"}
+- [PlantUML](https://plantuml.com/) + [Graphviz](https://graphviz.org/) for diagrams{class="fragment fade-left"}
 
 --
 
-### My personal Pandoc setup
+### My personal Pandoc setup and extensions
 
 - [Eisvogel LaTeX template](https://github.com/Wandmalfarbe/pandoc-latex-template) for PDFs{class="fragment fade-left"}
-- GitHub template for HTML5{class="fragment fade-left"}
+- [GitHub template](https://github.com/tajmone/pandoc-goodies) for HTML5{class="fragment fade-left"}
 - [Python](https://www.python.org/) Filters for{class="fragment fade-left"}
-- [inline PlantUML](https://github.com/timofurrer/pandoc-plantuml-filter) support{class="fragment fade-left"}
-  - [LaTeX environment](https://github.com/chdemko/pandoc-latex-environment) for admonitions in PDF{class="fragment fade-left"}
-- VS Code extensions for Pandoc, PlantUML, etc.{class="fragment fade-left"}
+  - [PlantUML from inside Markdown](https://github.com/timofurrer/pandoc-plantuml-filter) support{class="fragment fade-left"}
+  - [LaTeX environment](https://github.com/chdemko/pandoc-latex-environment) for info/warning admonitions in PDF{class="fragment fade-left"}
+- VS Code extensions for [Pandoc](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one), [PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml), etc.{class="fragment fade-left"}
 
 ---
 
-## Downsides
+## Aftermath / the downsides
 
-aka stuff that may break your experience{class="fragment shrink"}
+... not the best way to end the presentation. 😱{class="fragment fade-out"}
 
 - Conventions are still changing. You documents may break.{class="fragment fade-left"}
 - You need to look up details on the web.{class="fragment fade-left"}
 - The Setup requires a lot of local tweaking, especially when you also want snippets, code completion, linting, etc.{class="fragment fade-left"}
 - You'll mostly work mouseless, which in itself is not everybody's cup of tea.{class="fragment fade-left"}
+
+--
+
+<h2 class="r-fit-text fragment fade-down">I ♥ having different tools.</h2>
+
+I ♥ my Gimp, Blender, LightRoom, Word, Excel, etc.{class="fragment fade-left"}
+
+**But when comes to writing docs,  
+I'm never going back!**{class="fragment fade-up"}
+
+<small class="fragment fade-right">I may only switch the format.</small>
+<small class="fragment fade-left"> I'm looking at you, Org-mode!</small>
+
+![](mii.png){width=30%, class="fragment"}
+
+---
+
+## About these slides
+
+They were created using Markdown and [Reveal.js](https://revealjs.com/).
+
+Editing done in Visual Studio Code with a [Reveal extension](https://marketplace.visualstudio.com/items?itemName=tokiedokie.reveal-markdown).
+
+Slide sources available at [my <i class="fa fa-github"></i> GitHub page](https://github.com/gengor-git/documentation-as-code/).
