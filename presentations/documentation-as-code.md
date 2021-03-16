@@ -220,13 +220,12 @@ Wilma - move
 
 --
 
-### C4-Architecture with PlantUML Level 1
+### C4-Architecture at Level 1 » Context
 
-```{data-line-numbers="1|2-5|6|7|8-9|10-11|12"}
+```{data-line-numbers="1,11|2-4|5|6|7-8|9-10"}
 @startuml C4 Level 1 System Context diagram
 !include <C4/C4_Context.puml>
 !include <logos/spring.puml>
-!include <tupadr3/devicons2/angularjs>
 !include <tupadr3/devicons2/java>
 LAYOUT_LEFT_RIGHT()
 Person(account_mgr, "Account Manager", "Responsible for the service and its setup.")
@@ -241,15 +240,15 @@ Rel(my_solution, erp, "Fetch data")
 
 <!-- .s lide: data-background="#d6d4f9" data-auto-animate -->
 
-### C4-Architecture with PlantUML Level 1
+### C4-Architecture at Level 1 » Context
 
-![](plantuml-c4-level1.svg){style="background:white;border-radius: 25px;"}
+![](plantuml-c4-level1.svg){style="background: rgb(82%, 80%, 74.1%); border-radius: 5px; padding: 0.2em;"}
 
 --
 
-### C4-Architecture with PlantUML Level 2
+### C4-Architecture at Level 2 » Container
 
-```{data-line-numbers="1|2-6|7-8|9|10-14|15|16-19|20"}
+```{data-line-numbers="1,20|2-6|7-8|9|10-14|15|16-19"}
 @startuml C4 Level 2 System Container Diagram
 !include <C4/C4_Container>
 !include <logos/spring.puml>
@@ -274,9 +273,9 @@ Rel(api, erp, "Fetch data", "https")
 
 --
 
-### C4-Architecture with PlantUML Level 2
+### C4-Architecture at Level 2 » Container
 
-![](plantuml-c4-level2.svg){style="background: white;border-radius: 25px;"}
+![](plantuml-c4-level2.svg){style="background: rgb(82%, 80%, 74.1%); border-radius: 5px; padding: 0.2em;"}
 
 ---
 
