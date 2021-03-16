@@ -79,7 +79,7 @@ Independent from platforms and tools.
 
 ## Text files <br/>vs. <br/>nice looks
 
-- <i class="fa fa-git"></i> + code editor ♥ text files
+- <i class="fa fa-git"></i> + code editor ❤ text files
 - text files ≠ fancy layouting and WYSIWYG 
 
 > How do we solve this dilemma?{class="fragment"}
@@ -318,12 +318,12 @@ Rel(api, erp, "Fetch data", "https")
 
 --
 
-<h2 class="r-fit-text fragment fade-down">I ♥ having different tools.</h2>
+<h3 class="fragment fade-down">I 💜 having different tools.</h3>
 
-I ♥ my Gimp, Blender, LightRoom, Word, Excel, etc.{class="fragment fade-left"}
+I 💜 my Gimp, Blender, LightRoom, Word, Excel, etc.{class="fragment fade-left"}
 
-**But when comes to writing docs,  
-I'm never going back!**{class="fragment fade-up"}
+<h3 class="r-fit-text fragment fade-up" style="color: rgb(74.9%, 60.8%, 87.1%)">But when comes to writing docs,  
+I'm never going back!</h3>
 
 <small class="fragment fade-right">I may only switch the format.</small>
 <small class="fragment fade-left"> I'm looking at you, Org-mode!</small>
