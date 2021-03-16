@@ -1,2 +1,5 @@
 presentations/export/**
 out/**
+export/**
+samples/**/*.png
+samples/**/*.svg
