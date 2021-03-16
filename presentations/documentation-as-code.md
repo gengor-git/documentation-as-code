@@ -4,10 +4,14 @@ logoImg: "logo.png"
 theme: "black"
 transition: "slide"
 slideNumber: "true"
+highlightTheme: "monokai"
 controlsTutorial: "true"
+parallaxBackgroundImage: "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+parallaxBackgroundSize: "3000px 2000px"
+parallaxBackgroundHorizontal: "100"
+parallaxBackgroundVertical: "25"
+plugins: ["RevealChart"]
 ---
-
-<!-- .slide: data-background-image="title-image.png" data-background-opacity="0.1" -->
 
 ## Markdown + PlantUML <br/>vs. <br/>Word, Visio,
 
@@ -165,17 +169,21 @@ var txt = "Hello World";
 Recommendation:  
 [Pandoc](https://pandoc.org/) can be your swiss army knife of conversion.
 
+**Examples**:
+- Markdown → PDF, Word, Jira
+- but also Word → Markdown{class="fragment fade-left"}
+- also Org-Mode to Markdown{class="fragment fade-left"}
+- even Markdown to ePub{class="fragment fade-left"}
+
 --
 
 ### Invest in Markdown
 
-- With less than 10 simple conventions you can write full documents
-- Renderers will create nice looking target formats like HTML5 or PDF
-- Re-use your markdown for different types of documents: specs, presentations, to-do lists, meeting minutes.
+- With less than 10 simple conventions you can write full documents{class="fragment fade-left"}
+- Renderers will create nice looking target formats like HTML5 or PDF{class="fragment fade-left"}
+- Re-use your markdown for different types of documents: specs, presentations, to-do lists, meeting minutes.{class="fragment fade-left"}
 
 ---
-
-<!-- .slide: data-background="#006C5B" -->
 
 ## What about diagrams?
 
@@ -190,8 +198,6 @@ Recommendation:
 - You can version/diff/pull-request them like code
 
 --
-
-<!-- .slide: data-background="#f1e4cd" -->
 
 ### PlantUML usecase
 
@@ -210,11 +216,9 @@ Wilma - move
 <span class="fragment">this ↑ code</span>
 <span class="fragment fade-up"> creates this ↓ diagram </span>
 
-![](plantuml.svg){width=20% class="fragment fade-up"}
+![](plantuml.svg){width=20% class="fragment fade-up" style="background:white;border-radius: 25px;"}
 
 --
-
-<!-- .slide: data-background="#d6d4f9" -->
 
 ### C4-Architecture with PlantUML Level 1
 
@@ -235,15 +239,13 @@ Rel(my_solution, erp, "Fetch data")
 
 --
 
-<!-- .slide: data-background="#d6d4f9" -->
+<!-- .s lide: data-background="#d6d4f9" data-auto-animate -->
 
 ### C4-Architecture with PlantUML Level 1
 
-![](plantuml-c4-level1.svg)
+![](plantuml-c4-level1.svg){style="background:white;border-radius: 25px;"}
 
 --
-
-<!-- .slide: data-background="#3c859f" -->
 
 ### C4-Architecture with PlantUML Level 2
 
@@ -272,15 +274,11 @@ Rel(api, erp, "Fetch data", "https")
 
 --
 
-<!-- .slide: data-background="#3c859f" -->
-
 ### C4-Architecture with PlantUML Level 2
 
-![](plantuml-c4-level2.svg)
+![](plantuml-c4-level2.svg){style="background: white;border-radius: 25px;"}
 
 ---
-
-<!-- .slide: data-background="#295f46" -->
 
 ## Putting it all together
 
@@ -289,3 +287,35 @@ Rel(api, erp, "Fetch data", "https")
 - Other media for PNG/SVG/EPS content
 - Publish to different formats for different purposes
 - Version control and content re-use
+
+--
+
+### The tool stack
+
+- VS Code for editing{class="fragment fade-left"}
+- [Pandoc](https://pandoc.org/MANUAL.html) for conversions{class="fragment fade-left"}
+  - Filters + templates for optimal output{class="fragment fade-left"}
+- MiKTeX (Windows) for PDF creation{class="fragment fade-left"}
+- PlantUML + Graphviz for diagrams{class="fragment fade-left"}
+
+--
+
+### My personal Pandoc setup
+
+- [Eisvogel LaTeX template](https://github.com/Wandmalfarbe/pandoc-latex-template) for PDFs{class="fragment fade-left"}
+- GitHub template for HTML5{class="fragment fade-left"}
+- [Python](https://www.python.org/) Filters for{class="fragment fade-left"}
+- [inline PlantUML](https://github.com/timofurrer/pandoc-plantuml-filter) support{class="fragment fade-left"}
+  - [LaTeX environment](https://github.com/chdemko/pandoc-latex-environment) for admonitions in PDF{class="fragment fade-left"}
+- VS Code extensions for Pandoc, PlantUML, etc.{class="fragment fade-left"}
+
+---
+
+## Downsides
+
+aka stuff that may break your experience{class="fragment shrink"}
+
+- Conventions are still changing. You documents may break.{class="fragment fade-left"}
+- You need to look up details on the web.{class="fragment fade-left"}
+- The Setup requires a lot of local tweaking, especially when you also want snippets, code completion, linting, etc.{class="fragment fade-left"}
+- You'll mostly work mouseless, which in itself is not everybody's cup of tea.{class="fragment fade-left"}
