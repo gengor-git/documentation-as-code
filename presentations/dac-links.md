@@ -6,8 +6,8 @@
 - [MikTex](https://miktex.org/)
 - [Eisvogel Pandoc → LaTeX template](https://github.com/Wandmalfarbe/pandoc-latex-template)
 - [Python](https://www.python.org/)
-  - [PlantUML from inside Markdown](https://github.com/timofurrer/pandoc-plantuml-filter) support{class="fragment fade-left"}
-  - [LaTeX environment](https://github.com/chdemko/pandoc-latex-environment) for info/warning admonitions in PDF{class="fragment fade-left"}
+  - [PlantUML from inside Markdown](https://github.com/timofurrer/pandoc-plantuml-filter)
+  - [LaTeX environment](https://github.com/chdemko/pandoc-latex-environment)
 
 - [Install Script in PowerShell for various tools](https://github.com/gengor-git/windows-config)
 
@@ -15,6 +15,8 @@
 
 - [PlantUML](https://plantuml.com/de/)
 - [Graphviz](https://graphviz.org/)
+
+- [C4 references](https://github.com/plantuml-stdlib/C4-PlantUML)
 
 # Editor: Visual Studio Code
 
