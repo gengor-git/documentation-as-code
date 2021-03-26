@@ -9,7 +9,11 @@
   - [PlantUML from inside Markdown](https://github.com/timofurrer/pandoc-plantuml-filter)
   - [LaTeX environment](https://github.com/chdemko/pandoc-latex-environment)
 
-- [Install Script in PowerShell for various tools](https://github.com/gengor-git/windows-config)
+- [Install Script in PowerShell for various tools](https://github.com/gengor-git/windows-config)[^tools]
+
+      Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/gengor-git/windows-config/master/Install-DocTools.ps1'))
+
+[^tools]: Pandoc, MiKTeX, Git, VSCode, XMind
 
 ## PlantUML
 
