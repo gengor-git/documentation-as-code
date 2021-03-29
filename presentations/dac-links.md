@@ -41,3 +41,4 @@
   - [tinaciousdesign.theme-tinaciousdesign](https://marketplace.visualstudio.com/items?itemName=tinaciousdesign.theme-tinaciousdesign)
   - [tokiedokie.reveal-markdown](https://marketplace.visualstudio.com/items?itemName=tokiedokie.reveal-markdown)
   - [yzhang.markdown-all-in-one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+  - [ms-vsliveshare.vsliveshare](https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare)
