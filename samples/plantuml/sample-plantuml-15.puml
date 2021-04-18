@@ -10,7 +10,10 @@ skinparam Ranksep 200
 !include <Azure/Analytics/all.puml>
 !include <Azure/Compute/all.puml>
 
-left to right direction
+
+' left to right direction
+
+Person(user, "The User")
 
 AzureAppService(report, "Report UI", "Reads Reports")
 AzureHDInsight(analyzer, "The Analyzer", "Analyzes stuff")
@@ -19,6 +22,7 @@ AzureFunction(report_generator, "Generates reports", "Create reports")
 ' report --> analyzer: Read the data
 ' report --> report_generator: Transmit data to create report
 
+Rel_R(user, report, "https")
 Rel(report, analyzer, "Get data", $sprite="&envelope-closed")
 Rel(report, report_generator, "Request report for data", $sprite="&data-transfer-download")
 
