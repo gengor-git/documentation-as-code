@@ -2,9 +2,12 @@
 
 !include <C4/C4_Container.puml>
 skinparam UseCase {
-    BackgroundColor LightSlateGrey
+    FontColor White
+    BackgroundColor #2e8b57
     BackgroundColor<<main>> IndianRed
-    BorderColor Cyan
+    BackgroundColor<<non-it>> palevioletred
+    StereotypeFontColor gold
+    BorderColor #2f4f4f
 }
 
 title MVP Architecture for my new solution
@@ -15,7 +18,7 @@ title MVP Architecture for my new solution
 Person(fred, "👴Fred Feuerstein", "Bowling Champion.")
 Person(barney, "Barney Geröllheimer", "Fred's best friend.")
 
-System_Boundary(mysolution, "My Solution"){
+System_Boundary(mysolution, "My Solution") #fffacd {
     UseCase "Throw bowling ball" as bowl <<main>>
     UseCase "Clean Pins" as clear
     UseCase "Count Pins" as count
@@ -24,7 +27,7 @@ System_Boundary(mysolution, "My Solution"){
     ' Container(strike, "Strike Display", "MP4-Animation Service")
 }
 
-UseCase "Fetch beverage" as drinks
+UseCase "Fetch beverage" as drinks <<non-it>>
 
 fred -- bowl
 bowl ..> count : <<include>>
