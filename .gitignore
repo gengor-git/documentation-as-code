@@ -3,3 +3,5 @@ out/**
 export/**
 samples/**/*.png
 samples/**/*.svg
+samples/**/*.pdf
+media/**
