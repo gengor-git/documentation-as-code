@@ -1,0 +1,49 @@
+@startuml
+
+!include <C4/C4_Container.puml>
+skinparam UseCase {
+    BackgroundColor LightSlateGrey
+    BackgroundColor<<main>> IndianRed
+    BorderColor Cyan
+}
+
+title MVP Architecture for my new solution
+
+' actor "Fred Feuerstein" as fred
+' actor "Barney Geröllheimer" as barney
+
+Person(fred, "👴Fred Feuerstein", "Bowling Champion.")
+Person(barney, "Barney Geröllheimer", "Fred's best friend.")
+
+System_Boundary(mysolution, "My Solution"){
+    UseCase "Throw bowling ball" as bowl <<main>>
+    UseCase "Clean Pins" as clear
+    UseCase "Count Pins" as count
+    UseCase "Display points" as display_score
+    UseCase "Display strike animation" as strike
+    ' Container(strike, "Strike Display", "MP4-Animation Service")
+}
+
+UseCase "Fetch beverage" as drinks
+
+fred -- bowl
+bowl ..> count : <<include>>
+bowl ..> clear : <<include>>
+bowl ..> display_score : <<include>>
+strike ..> display_score : <<extends>>
+barney - drinks #line:MediumPurple;Line.bold;Line.dashed : move to bar
+
+'
+' Meta infos below this please.
+'
+
+
+header
+    <color: #e30b5c>This is only a draft.
+endheader
+
+footer
+    🧡💛💚💙💜🤎🖤🤍
+endfooter
+
+@enduml
