@@ -36,6 +36,11 @@ bowl ..> display_score : <<include>>
 strike ..> display_score : <<extends>>
 barney - drinks #line:MediumPurple;Line.bold;Line.dashed : move to bar
 
+
+note right of bowl
+It this already a system UC?
+endnote
+
 '
 ' Meta infos below this please.
 '
