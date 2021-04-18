@@ -1,0 +1,35 @@
+@startuml
+digraph demo {
+    graph [
+    
+    ];
+    node [fixedsize=false,
+		fontname="Calibri"
+		fontsize=24,
+		height=1,
+		style="filled,setlinewidth(2)",
+		width=1.2,
+	];
+    markdown [label="Markdown", shape="rectangle", fillcolor="#bf9bde"];
+    pandoc [label="Pandoc"];
+    markdown -> pandoc;
+    pandoc -> json;
+
+    json [label="JSON object", shape="record", fillcolor="#bf9bde"];
+    filters [label="Filters in Python, LUA"];
+    json -> filters
+    graph [rank=min];
+    plantuml [label="PlantUML"];
+    latex [label="LaTeX"];
+    images [label="SVG, PNG", shape="rectangle", fillcolor="#bf9bde", ];
+    html5 [label="HTML5", shape="rectangle", fillcolor="#bf9bde"];
+    pdf [label="PDF", shape="rectangle", fillcolor="#bf9bde"];
+    filters -> plantuml;
+    filters -> latex;
+    plantuml -> images;
+    images -> latex;
+    images -> html5;
+    latex -> pdf;
+
+}
+@enduml
