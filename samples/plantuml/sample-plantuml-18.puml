@@ -1,0 +1,45 @@
+@startmindmap
+
+<style>
+mindmapDiagram {
+    node {
+        BackgroundColor PaleVioletRed
+        
+    }
+    rootNode {
+        FontName Roboto Black
+        BackgroundColor DarkTurquoise
+        FontColor Green
+        FontSize 20
+    }
+    leafNode {
+        BackgroundColor LightSteelBlue
+    }
+    .new {
+        BackgroundColor LimeGreen
+    }
+    .changes {
+        BackgroundColor Aquamarine
+    }
+}
+</style>
+
+* Documentation
+** Solution <<new>>
+***: System Handbook
+====
+What to do?
+....
+Other stuff.
+----
+* List 1
+* List 2
+* List 3
+; <<changes>>
+*** Standard Operating Procedures
+*** Runbooks <<new>>
+** Business
+*** Contracts
+*** Controlling <<new>>
+
+@endmindmap
