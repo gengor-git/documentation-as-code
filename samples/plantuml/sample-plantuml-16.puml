@@ -1,0 +1,53 @@
+@startuml
+
+!include <archimate/Archimate.puml>
+!include <c4/C4_Container.puml>
+!include <azure/AzureCommon.puml>
+!include <azure/AzureSimplified.puml>
+!include <azure/Compute/all.puml>
+!include <azure/Networking/all.puml>
+skinparam Linetype ortho
+
+Business_Service(publication, "Repair Manual Publication Service")
+Business_Actor(publisher, "Publishing Expert")
+Business_Object(content, "Published Content Package")
+
+
+Application_Service(publish_tool, "Publishing Toolset")
+
+
+Rel_Serving_Up(publish_tool, publisher, "")
+Rel_Assignment_Left(publisher, publication, "")
+Rel_Flow_Left(publication, content, "")
+
+Person(fred, "Fred Feuerstein", "Bowling Champion")
+
+Rel(fred, publish_tool, "Uses", "https")
+
+AzureBatch(batch, "AZ Batch", "")
+AzureLoadBalancer(lb, "AZ Load Balancer", "")
+AzureFunction(function, "AZ Function", "")
+together {
+    AzureVirtualMachine(vm1, "AZ VM1", "")
+    AzureVirtualMachine(vm2, "AZ VM2", "")
+    AzureVirtualMachine(vm3, "AZ VM3", "")
+    AzureVirtualMachine(vm4, "AZ VM4", "")
+}
+
+lb --> function #line.bold;line.dashed
+function --> vm1
+function --> vm2
+function --> vm3
+function --> vm4
+vm1 --> batch
+vm2 --> batch
+vm3 --> batch
+vm4 --> batch
+
+title "Azure Infrastructure Setup"
+
+footer
+©2021 by me
+endfooter
+
+@enduml
