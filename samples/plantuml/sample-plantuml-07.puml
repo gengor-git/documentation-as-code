@@ -15,7 +15,7 @@ skinparam NoteBackgroundColor #EAEAEA
 skinparam NoteBorderColor Grey
 skinparam ArrowColor DarkSlateGrey
 
-package Arvato {
+package Company {
 node node1
 node node2
 node node3
