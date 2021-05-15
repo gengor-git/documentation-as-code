@@ -1,0 +1,66 @@
+@startuml
+
+skinparam ActivityBackgroundColor #ffb3ba
+'#bae1ff
+skinparam ActivityBorderColor Black
+skinparam NoteBackgroundColor #99996f
+'#ffffba
+skinparam NoteBorderColor Black
+skinparam DefaultFontColor #891d90x
+skinparam PartitionFontColor MediumTurquoise
+
+|Me|
+start
+:Step1
+====
+What should we do here?
+----
+Someting cool?
+....
+Other stuff also
+
+* This
+* is
+* the
+* way;
+
+-[#blue,dotted]-> hello;
+
+|You|
+:Step2;
+
+-> hello;
+
+partition Rendering {
+    fork
+        |Me|
+        :Step3;
+
+        -> hello;
+
+        note
+        Ex esse __ipsum__ aliquip
+        aliqua //exercitation//
+        incididunt elit est
+        minim sunt ea.
+        endnote
+    fork again
+        |You|
+        :Step4;
+
+        -> hello;
+
+    fork again
+        :Step5;
+
+        -> hello;
+
+    endfork
+}
+|Me|
+:Step6;
+
+stop
+
+
+@enduml
