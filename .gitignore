@@ -5,3 +5,4 @@ samples/**/*.png
 samples/**/*.svg
 samples/**/*.pdf
 media/**
+**/*.~undo-tree~
